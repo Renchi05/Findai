@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f8fc;
+  --ink: #111827;
+  --muted: #667085;
+  --line: #e7e9ef;
+  --card: #ffffff;
+  --accent: #5b5cf0;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+button, input { font: inherit; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+.hero {
+  padding: 72px 0 48px;
+  background: radial-gradient(circle at 50% 0%, #eef0ff 0, var(--bg) 52%);
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 8px 10px 8px 18px;
+  box-shadow: 0 12px 35px rgba(30, 35, 70, .08);
+}
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 17px;
+}
+.search button {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.chip {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 999px;
+  padding: 9px 13px;
+  cursor: pointer;
+}
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+}
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (max-width: 850px) {
+  .tool-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { padding-top: 44px; }
+  .search { align-items: stretch; flex-direction: column; padding: 12px; }
+  .search button { width: 100%; }
+}
